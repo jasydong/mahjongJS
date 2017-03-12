@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>mahjongJS</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="canvas" width="800px" height="600px"></canvas> 
+    </div>
+    <script type="text/javascript" src="http://canvg.github.io/canvg/rgbcolor.js"></script> 
+    <script type="text/javascript" src="http://canvg.github.io/canvg/StackBlur.js"></script>
+    <script type="text/javascript" src="http://canvg.github.io/canvg/canvg.js"></script>
+	<script type="text/javascript">
+
+		window.onload = function(){
+
+			//load '../path/to/your.svg' in the canvas with id = 'canvas'
+            canvg('canvas', 'mahjong.svg');
+
+            //load a svg snippet in the canvas with id = 'drawingArea'
+            //canvg(document.getElementById('drawingArea'), '<svg>...</svg>');
+
+            //ignore mouse events and animation
+            //canvg('canvas', 'file.svg', { ignoreMouse: true, ignoreAnimation: true });
+
+		};
+	</script>
+</body>
+</html>
