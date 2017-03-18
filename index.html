@@ -15,9 +15,12 @@
 	<script type="text/javascript">
 
 		window.onload = function(){
+            //url锚点指定加载文件
+            var anchor = window.location.hash.replace('#', '');
+            var svgfile = anchor ? 'svg/'+ anchor +'.svg' : 'svg/zhong.svg';
 
 			//load '../path/to/your.svg' in the canvas with id = 'canvas'
-            canvg('canvas', 'mahjong.svg');
+            canvg('canvas', svgfile);
 
             //load a svg snippet in the canvas with id = 'drawingArea'
             //canvg(document.getElementById('drawingArea'), '<svg>...</svg>');
