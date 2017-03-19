@@ -7,6 +7,45 @@
 </head>
 <body>
     <div class="container">
+        <div class="selector">
+            <span>请选择: </span>
+            <select id="selector">
+                <option value='1wan'>&nbsp;一萬&nbsp;</option>
+                <option value='2wan'>&nbsp;二萬&nbsp;</option>
+                <option value='3wan'>&nbsp;三萬&nbsp;</option>
+                <option value='4wan'>&nbsp;四萬&nbsp;</option>
+                <option value='5wan'>&nbsp;五萬&nbsp;</option>
+                <option value='6wan'>&nbsp;六萬&nbsp;</option>
+                <option value='7wan'>&nbsp;七萬&nbsp;</option>
+                <option value='8wan'>&nbsp;八萬&nbsp;</option>
+                <option value='9wan'>&nbsp;九萬&nbsp;</option>
+                <option value='1tong'>&nbsp;一筒&nbsp;</option>
+                <option value='2tong'>&nbsp;二筒&nbsp;</option>
+                <option value='3tong'>&nbsp;三筒&nbsp;</option>
+                <option value='4tong'>&nbsp;四筒&nbsp;</option>
+                <option value='5tong'>&nbsp;五筒&nbsp;</option>
+                <option value='6tong'>&nbsp;六筒&nbsp;</option>
+                <option value='7tong'>&nbsp;七筒&nbsp;</option>
+                <option value='8tong'>&nbsp;八筒&nbsp;</option>
+                <option value='9tong'>&nbsp;九筒&nbsp;</option>
+                <option value='1tiao'>&nbsp;一条&nbsp;</option>
+                <option value='2tiao'>&nbsp;二条&nbsp;</option>
+                <option value='3tiao'>&nbsp;三条&nbsp;</option>
+                <option value='4tiao'>&nbsp;四条&nbsp;</option>
+                <option value='5tiao'>&nbsp;五条&nbsp;</option>
+                <option value='6tiao'>&nbsp;六条&nbsp;</option>
+                <option value='7tiao'>&nbsp;七条&nbsp;</option>
+                <option value='8tiao'>&nbsp;八条&nbsp;</option>
+                <option value='9tiao'>&nbsp;九条&nbsp;</option>
+                <option value='dong'>&nbsp;東風&nbsp;</option>
+                <option value='nan'>&nbsp;南風&nbsp;</option>
+                <option value='xi'>&nbsp;西風&nbsp;</option>
+                <option value='bei'>&nbsp;北風&nbsp;</option>
+                <option value='zhong' selected="selected">&nbsp;紅中&nbsp;</option>
+                <option value='fa'>&nbsp;發財&nbsp;</option>
+                <option value='bai'>&nbsp;白闆&nbsp;</option>
+            </select>
+        </div>
         <canvas id="canvas" width="800px" height="600px"></canvas> 
     </div>
     <script type="text/javascript" src="https://canvg.github.io/canvg/rgbcolor.js"></script> 
@@ -18,9 +57,15 @@
             //url锚点指定加载文件
             var anchor = window.location.hash.replace('#', '');
             var svgfile = anchor ? 'svg/'+ anchor +'.svg' : 'svg/zhong.svg';
+            var selector = document.getElementById('selector');
 
 			//load '../path/to/your.svg' in the canvas with id = 'canvas'
             canvg('canvas', svgfile);
+
+            selector.onchange = function(){
+                var svgfile = 'svg/'+ this.value +'.svg';
+                canvg('canvas', svgfile);
+            };
 
             //load a svg snippet in the canvas with id = 'drawingArea'
             //canvg(document.getElementById('drawingArea'), '<svg>...</svg>');
